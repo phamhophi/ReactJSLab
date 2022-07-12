@@ -11,14 +11,9 @@ class Menu extends Component {
     const menu = this.props.dishes.map((dish) => {
       return (
         <div key={dish.id} className="col-12 col-md-5 m-1">
-          <Card tag="li">
+          <Card>
             {/* Hiển thị hình ảnh món ăn */}
-            <CardImg
-              width="100%"
-              object
-              src={dish.image}
-              alt={dish.name}
-            ></CardImg>
+            <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
 
             <CardImgOverlay>
               {/* Hiển thị tên món ăn*/}
@@ -30,9 +25,7 @@ class Menu extends Component {
     });
     return (
       <div className="container">
-        <div className="row">
-          <Media list>{menu}</Media>
-        </div>
+        <div className="row">{menu}</div>
       </div>
     );
   }
